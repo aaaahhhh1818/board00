@@ -1,10 +1,9 @@
 package org.zerock.board00.common.config;
 
 import lombok.extern.log4j.Log4j2;
+import org.springframework.context.annotation.Import;
 import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
-import org.zerock.board00.board.config.BoardRootConfig;
-import org.zerock.board00.board.config.BoardservletConfig;
 
 import javax.servlet.Filter;
 
@@ -18,7 +17,7 @@ public class WebConfig extends AbstractAnnotationConfigDispatcherServletInitiali
         log.info("1--------------------------");
         log.info("1--------------------------");
 
-        return new Class[]{RootConfig.class, BoardRootConfig.class};
+        return new Class[]{RootConfig.class};
     }
 
     @Override
@@ -28,7 +27,7 @@ public class WebConfig extends AbstractAnnotationConfigDispatcherServletInitiali
         log.info("2--------------------------");
 
 
-        return new Class[]{ServletConfig.class, BoardservletConfig.class};
+        return new Class[]{ServletConfig.class};
     }
 
     @Override

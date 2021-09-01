@@ -8,11 +8,14 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
+import org.zerock.board00.board.config.BoardRootConfig;
 
 import javax.sql.DataSource;
 import java.util.ArrayList;
 
 @Configuration
+@Import(BoardRootConfig.class) //로딩될 때 한번에 로딩해옴
 public class RootConfig {
 
     //MyBatis 연결을 쉽게 해주는 도구 만들기

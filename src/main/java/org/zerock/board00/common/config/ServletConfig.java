@@ -1,5 +1,6 @@
 package org.zerock.board00.common.config;
 
+import org.springframework.context.annotation.Import;
 import org.springframework.format.FormatterRegistry;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
@@ -7,9 +8,11 @@ import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
+import org.zerock.board00.board.config.BoardservletConfig;
 import org.zerock.board00.common.converter.StringToLocalDateTimeConverter;
 
 @EnableWebMvc
+@Import(BoardservletConfig.class)
 public class ServletConfig implements WebMvcConfigurer {
     @Override
     public void addFormatters(FormatterRegistry registry) {

@@ -34,4 +34,16 @@ public class BoardMapperTests {
             boardMapper.insert(board);
         });
     }
+
+    @Test
+    public void testDummies2(){
+
+            Board board = Board.builder()
+                    .title("ABC")
+                    .content("ABC")
+                    .writer("user11")
+                    .build();
+
+            boardMapper.insert(board);
+    }
 }

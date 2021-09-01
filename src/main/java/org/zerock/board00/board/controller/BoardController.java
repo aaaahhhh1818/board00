@@ -4,12 +4,15 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.zerock.board00.board.service.BoardDTO;
 import org.zerock.board00.board.service.BoardService;
 import org.zerock.board00.board.service.TimeService;
+
+import javax.validation.Valid;
 
 @Controller
 @RequestMapping("/board/*")
@@ -29,7 +32,7 @@ public class BoardController {
     }
 
     @PostMapping("/register")
-    public String registerPost(BoardDTO boardDTO){
+    public String registerPost(@Valid BoardDTO boardDTO){
 
         log.info("boardDTOM           " + boardDTO);
 
